@@ -8,6 +8,7 @@ export function Map() {
   const markerIcon = icon({ iconUrl: '/marker.png' })
 
   return (
+    // TODO use mapbox instead?
     <MapContainer
       className="absolute h-full w-full"
       center={[51.505, -0.09]}
@@ -15,9 +16,10 @@ export function Map() {
     >
       <TileLayer
         attribution={
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          // '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          '&copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors, <a href=&quot;https://creativecommons.org/licenses/by-sa/2.0/&quot;>CC-BY-SA</a>, Imagery &copy; <a href=&quot;https://www.mapbox.com/&quot;>Mapbox</a>'
         }
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        url={process.env.NEXT_PUBLIC_MAPBOX_TILE_SERVICE || ''}
       />
       <Marker position={[51.505, -0.09]} icon={markerIcon}>
         <Popup>This is a popup</Popup>
