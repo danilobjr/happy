@@ -3,8 +3,6 @@ import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 
 export function Map() {
-  console.log('map')
-
   // TODO memoize this
   // FIXME set anchor position
   const markerIcon = icon({ iconUrl: '/marker.png' })
