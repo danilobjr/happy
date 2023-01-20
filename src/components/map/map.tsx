@@ -1,5 +1,6 @@
 import { icon } from 'leaflet'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
+import { env } from '@env'
 import 'leaflet/dist/leaflet.css'
 
 export function Map() {
@@ -8,7 +9,6 @@ export function Map() {
   const markerIcon = icon({ iconUrl: '/marker.png' })
 
   return (
-    // TODO remove zoom controls (+/-)?
     // TODO use mapbox instead?
     <MapContainer
       className="absolute h-full w-full"
@@ -17,7 +17,7 @@ export function Map() {
       zoomControl={false}
     >
       <TileLayer
-        url={process.env.NEXT_PUBLIC_MAPBOX_TILE_SERVICE_URL || ''}
+        url={env.mapboxTileServerUrl}
         // attribution={
         //   '&copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors, <a href=&quot;https://creativecommons.org/licenses/by-sa/2.0/&quot;>CC-BY-SA</a>, Imagery &copy; <a href=&quot;https://www.mapbox.com/&quot;>Mapbox</a>'
         // }

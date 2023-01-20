@@ -6,7 +6,14 @@
   "editorconfig": true,
   "semi": false,
   "singleQuote": true,
-  "importOrder": ["^@/(.*)$", "^@components$", "^[./]", "(.*).css$"],
+  "importOrder": [
+    "^@/(.*)$",
+    "^@components$",
+    "^@utils$",
+    "^@env$",
+    "^[./]",
+    "(.*).css$"
+  ],
   "importOrderSeparation": false,
   "importOrderSortSpecifiers": true
 }
