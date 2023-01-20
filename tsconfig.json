@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "importHelpers": true,
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -21,7 +22,9 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@components": ["src/components"]
+      "@components": ["src/components/index"],
+      "@utils": ["src/utils/index"],
+      "@env": ["src/env"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
